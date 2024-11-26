@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const GradientBackground = () => {
   // Define gradients for each section
 const gradients = {
-    about: "linear-gradient(135deg, #dc6cff, #00c8f1)", // Section 1
+    about: "linear-gradient(135deg, #232323, #232323)", // Section 1
     projects: "linear-gradient(135deg, #ffcf61, #ff7777)", // Section
     photography: "linear-gradient(135deg, #ff4242, #ffc3a0)", // Section 3
   };

@@ -8,12 +8,14 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { FiGithub } from "react-icons/fi";
 import { PiLinkedinLogo } from "react-icons/pi";
+import { CgFileDocument } from "react-icons/cg";
 
 function HomePage() {
   const navigate = useNavigate();
 
   return (
     <div className="relative w-screen h-screen">
+    
       <GradientBackground />
       <div className="relative text-white">
         <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
@@ -22,16 +24,16 @@ function HomePage() {
             id="about"
             className="min-h-screen snap-start pt-10 flex flex-col items-center px-6"
           >
-            <div className="flex flex-col lg:flex-row text-black text-lg lg:text-3xl py-10 px-6 lg:px-12 mt-20 border-4 rounded-lg border-black mx-auto w-full lg:w-3/4 shadow-lg">
+            <div className="flex flex-col lg:flex-row text-black text-lg lg:text-3xl py-10 px-6 lg:px-12 mt-20 text-white rounded-lg border-black mx-auto ">
               {/* Text Section */}
-              <div className="w-full lg:w-1/2 px-4">
-                <h1 className="font-ariata text-3xl lg:text-4xl pb-4">
+              <div className="w-full px-4">
+                <h1 className="font-ariata text-3xl lg:text-8xl pb-4">
                   Hello, I'm Shirvil.
                 </h1>
-                <h1 className="font-ariata text-3xl lg:text-4xl pb-4">
+                <h1 className="font-ariata text-3xl lg:text-5xl pt-4">
                   I'm a Software Engineer.
                 </h1>
-                <h2 className="text-sm lg:text-base font-consolas font-thin pb-4">
+                <h2 className="text-sm lg:text-base font-consolas pt-6 font-thin pb-4">
                   I am a student at the University of Michigan. <br></br> I am
                   studying Computer Science and Business.
                 </h2>
@@ -42,18 +44,21 @@ function HomePage() {
                   This website has some of that.
                 </h2>
                 <div className="flex mt-4">
-                  <PiLinkedinLogo className="w-6 mr-2" />
-                  <AiOutlineMail className="w-6 mr-2" />
-                  <FiGithub className="w-6 mr-2" />
+                  <button>
+                    <PiLinkedinLogo className="w-6 mr-2" />
+                  </button>
+                  <button>
+                    <AiOutlineMail className="w-6 mr-2" />
+                  </button>
+                  <button>
+                    <FiGithub className="w-6 mr-2" />
+                  </button>
+                  <button>
+                    <CgFileDocument className="w-6 mr-2" />
+                    <a href="resume.pdf" target="_blank">
+                    </a>
+                  </button>
                 </div>
-              </div>
-              {/* Image Section */}
-              <div className="flex items-center  justify-center w-full lg:w-1/2 mt-8 lg:mt-0">
-                <img
-                  src="/aboutMe.png"
-                  className="w-3/4 lg:w-1/2 h-auto border-2 border-black"
-                  alt="About Me"
-                />
               </div>
             </div>
           </section>
@@ -155,7 +160,7 @@ function HomePage() {
                     stroke-width="1.0"
                     stroke="currentColor"
                     className="size-12 transform transition-transform duration-200 group-hover:scale-110"
-                    onClick={() => navigate("/PhotographyPage")}
+                    onClick={() => navigate("/photography")}
                   >
                     <path
                       stroke-linecap="round"

@@ -7,7 +7,9 @@ function PhotographyPage() {
   const navigate = useNavigate();
 
   return (
+    
     <div className="relative w-screen h-screen">
+
       <Gallery />
     </div>
   );

@@ -6,8 +6,6 @@ const Navbar = ({ dark }) => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("");
 
-
-
   // Update active section using Intersection Observer
   useEffect(() => {
     if (location.pathname !== "/") return;
@@ -36,42 +34,36 @@ const Navbar = ({ dark }) => {
     return () => observer.disconnect(); // Cleanup observer
   }, [location.pathname]);
 
-  const handleNavigate = (section) => {
-    if (location.pathname !== "/") {
-      navigate(`/#${section}`);
-      setTimeout(() => {
-        const target = document.getElementById(section);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 0);
+  // Handle navigation when a user clicks on the nav bar links
+  const handleNavigate = (path) => {
+    if (path === "resume") {
+      // Open the resume PDF in a new tab
+      window.open("resume.pdf", "_blank");
     } else {
-      const target = document.getElementById(section);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
+      // Navigate to the respective page
+      navigate(`/${path}`);
     }
   };
 
+  // Conditionally apply the background class based on the current route
+  const navBackground =
+    location.pathname === "/home" ? "bg-transparent" : "bg-primaryColor";
+
   return (
-    <nav className="font-consolas text-white text-sm py-2 sticky top-0 z-50 ">
+    <nav className={`font-consolas text-white text-sm py-2 sticky top-0 z-50 ${navBackground}`}>
       <div className="flex justify-end space-x-4 px-6">
         <button
-          onClick={() => handleNavigate("about")}
+          onClick={() => handleNavigate("home")}
           className={`p-5 text-center py-2 hover:scale-110 transform transition duration-200 ${
-            activeSection === "about"
-              ? "bg-primaryColor font-bold text-white"
-              : ""
+            location.pathname === "/home" ? "font-bold" : "opacity-50"
           }`}
         >
-          About
+          Home
         </button>
         <button
           onClick={() => handleNavigate("projects")}
           className={`p-5 text-center py-2 hover:scale-110 transform transition duration-200 ${
-            activeSection === "projects"
-              ? "bg-primaryColor font-bold text-white"
-              : ""
+            location.pathname === "/projects" ? "font-bold" : "opacity-50"
           }`}
         >
           Projects
@@ -79,22 +71,19 @@ const Navbar = ({ dark }) => {
         <button
           onClick={() => handleNavigate("photography")}
           className={`p-5 text-center py-2 hover:scale-110 transform transition duration-200 ${
-            activeSection === "photography"
-              ? "bg-primaryColor font-bold text-white"
-              : ""
+            location.pathname === "/photography" ? "font-bold" : "opacity-50"
           }`}
         >
           Photography
         </button>
         <button
-          
           className={`p-5 text-center py-2 hover:scale-110 transform transition duration-200 ${
-            activeSection === "resume"
-              ? "bg-primaryColor font-bold text-white"
-              : ""
+            location.pathname === "/resume" ? "font-bold" : "opacity-50"
           }`}
         >
-          <a href="resume.pdf" target="_blank">Resume</a>
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+            Resume
+          </a>
         </button>
       </div>
     </nav>

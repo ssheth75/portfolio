@@ -16,16 +16,27 @@ module.exports = {
         outfitLight: ["Outfit-Light", "sans-serif"],
         consolas: ["Consolas", "monospace"],
         ariata: ["Ariata", "sans-serif"],
-        ariataBold: ["Ariata-Bold", "sans-serif"]
+        ariataBold: ["Ariata-Bold", "sans-serif"],
       },
       keyframes: {
         fallIn: {
           "0%": { transform: "translateY(50px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
+        fallAndFade: {
+          "0%": {
+            transform: "translateY(10px)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
       },
       animation: {
-        fallIn: "fallIn 0.6s ease forwards",
+        fallIn: "fallIn 0.6s ease-out forwards",
+        fallAndFade: "fallAndFade 1s ease-out forwards",
       },
     },
   },
