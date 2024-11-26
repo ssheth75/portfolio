@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Handjet';
+  src: url('./fonts/Handjet-Medium.ttf') format('truetype'); /* Adjust the path */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Handjet-Light';
+  src: url('./fonts/Handjet-Light.ttf') format('truetype'); /* Adjust the path */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Handjet-Bold';
+  src: url('./fonts/Handjet-SemiBold.ttf') format('truetype'); /* Adjust the path */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/Outfit-Medium.ttf') format('truetype'); /* Adjust the path */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit-Light';
+  src: url('./fonts/Outfit-Light.ttf') format('truetype'); /* Adjust the path */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ariata';
+  src: url('./fonts/Ariata\ Display\ Regular.otf') format('truetype'); /* Adjust the path */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ariata-Bold';
+  src: url('./fonts/Ariata\ Display\ Bold.otf') format('truetype'); /* Adjust the path */
+  font-style: normal;
+}
