@@ -38,7 +38,7 @@ const Gallery = () => {
 
   return (
     <div className="pb-8 px-4 bg-primaryColor">
-      <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4">
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
         {images.map((src, index) => (
           <img
             key={index}
@@ -48,7 +48,7 @@ const Gallery = () => {
               isVisible[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
             style={{
-              transitionDelay: `${index * 0.1}s`,  // Staggered delay for animation
+              transitionDelay: `${index * 0.05}s`,  // Staggered delay for animation
               visibility: isVisible[index] ? "visible" : "hidden",  // Ensure invisible images don't affect layout
             }}
             loading="lazy"  // Lazy loading for images

@@ -38,28 +38,96 @@ function ProjectsPage() {
 
       {/* Personal Section */}
       {activeSection === "personal" && (
-        <div>
+        <div className="mb-20">
           <ProjectsPageCard
             title="ChessAI"
             text="I developed a chess engine from scratch in C++, incorporating 
             all core game functionalities and rules. I also implemented a Chess AI adversary powered by a traditional minimax 
             algorithm with alpha-beta pruning, allowing it to play competitively against human players. 
             Check out the repository if you are interested."
-            image="spotify.png"
-            technologies="Mini-Max, Alpha-Beta Pruning, C++, SFML"
+            images={[
+              "/chess0.png",
+              "/chess1.png",
+              "/chess2.png",
+              "/chess3.png",
+              "/chess4.png",
+              "/chess5.png",
+              "/chess6.png",
+            ]}
+            technologies="C++, Mini-Max, Alpha-Beta Pruning, SFML"
+            width="1/2"
           />
-          <ProjectsPageCard />
-          <ProjectsPageCard />
-          <ProjectsPageCard />
+          <ProjectsPageCard
+            title="BeTuned (Developing)"
+            text="I am currenly developing a React Native mobile app inspired by the popular social 
+            media platform BeReal. The app prompts users at random times throughout the 
+            day to share their most recently played song, creating a unique and spontaneous way to 
+            connect over music. It includes features for interaction with friends and followers, such as liking, 
+            commenting, and discovering shared musical interests."
+            images={["/beTuned.png"]}
+            technologies="React Native, Tailwind, Spotify API, Node.js, MongoDB"
+            width="1/3"
+          />{" "}
+          <ProjectsPageCard
+            title="Ecommerce Web App"
+            text="I developed a full-stack e-commerce web application featuring both client 
+            and admin interfaces. The platform enables product listing, management, 
+            and secure purchases. I utilized React, Next.js, Tailwind CSS, the Stripe API 
+            for payment processing, and MongoDB for data management."
+            images={["/ecommerce0.png", "/ecommerce1.png", "/ecommerce2.png"]}
+            technologies="React/Next.js, Tailwind, Stripe API, MongoDB"
+            width="3/4"
+          />
+          <ProjectsPageCard
+            title="Astro POD"
+            text="I built a Python script to automate the entire process of sharing NASA's 
+            Astronomy Picture of the Day on Instagram. The script uses BeautifulSoup for 
+            web scraping to fetch the daily image along with its metadata and credits, 
+            formats the captions to include all necessary details, and posts directly to 
+            Instagram through Instabot (@astro_p0d)."
+            images={[
+              "/astropod0.png",
+              "/astropod1.png",
+              "/astropod2.png",
+              "/astropod3.png",
+            ]}
+            technologies="Python, BS4, Web-scraping, Cron"
+            width="1/3"
+          />
+          <ProjectsPageCard
+            title="This Website"
+            text="I made this website using React and Tailwind CSS. Animations done with 
+            Framer Motion. Check out the repo if you are intrested."
+            images={["/thisWebsite.png"]}
+            technologies="React, Tailwind, Framer Motion"
+            width="3/4"
+          />
+          <ProjectsPageCard
+            title="2048X"
+            text="A web-based adaptation of the popular 2048 mobile game, designed to 
+            enhance the classic gameplay experience. This version allows users to 
+            customize their grid size, choosing from a variety of dimensions to increase 
+            difficulty and add variety. "
+            images={["/2048.png"]}
+            technologies="Javascript, HTML/CSS"
+            width="3/4"
+          />
         </div>
       )}
 
       {/* Professional Section */}
       {activeSection === "professional" && (
         <div>
-          <ProjectsPageCard />
-          <ProjectsPageCard />
-          <ProjectsPageCard />
+          <ProjectsPageCard
+            title="Intel Resource Constraint Prediction Model"
+            text="A web-based adaptation of the popular 2048 mobile game, designed to 
+            enhance the classic gameplay experience. This version allows users to 
+            customize their grid size, choosing from a variety of dimensions to increase 
+            difficulty and add variety. "
+            images={["/2048.png"]}
+            technologies="Python, PyTorch, Logistic Regression"
+            width="3/4"
+          />
         </div>
       )}
     </div>

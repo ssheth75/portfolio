@@ -15,7 +15,6 @@ function HomePage() {
 
   return (
     <div className="relative w-screen h-screen">
-    
       <GradientBackground />
       <div className="relative text-white">
         <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
@@ -38,26 +37,44 @@ function HomePage() {
                   studying Computer Science and Business.
                 </h2>
                 <h2 className="text-sm lg:text-base font-consolas font-thin pb-4">
-                  I like to build cool stuff and take pictures.
+                  I like to build cool stuff and take photographs.
                 </h2>
                 <h2 className="text-sm lg:text-base font-consolas font-thin">
                   This website has some of that.
                 </h2>
                 <div className="flex mt-4">
-                  <button>
-                    <PiLinkedinLogo className="w-6 mr-2" />
-                  </button>
-                  <button>
-                    <AiOutlineMail className="w-6 mr-2" />
-                  </button>
-                  <button>
-                    <FiGithub className="w-6 mr-2" />
-                  </button>
-                  <button>
-                    <CgFileDocument className="w-6 mr-2" />
-                    <a href="resume.pdf" target="_blank">
-                    </a>
-                  </button>
+                  <a
+                    href="https://www.linkedin.com/in/shirvilsheth"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button>
+                      <PiLinkedinLogo className="w-6 mr-2" />
+                    </button>
+                  </a>
+                  <a href="mailto:shirvil@umich.edu">
+                    <button>
+                      <AiOutlineMail className="w-6 mr-2" />
+                    </button>
+                  </a>
+                  <a
+                    href="https://github.com/ssheth75"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button>
+                      <FiGithub className="w-6 mr-2" />
+                    </button>
+                  </a>
+                  <a
+                    href="resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button>
+                      <CgFileDocument className="w-6 mr-2" />
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -71,7 +88,10 @@ function HomePage() {
             <h2 className="text-center text-black font-ariata text-3xl lg:text-8xl pb-10">
               Projects
             </h2>
-            <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl">
+            <div
+              className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl"
+              onClick={() => navigate("/projects", { replace: true })}
+            >
               <ProjectCard
                 githubLink="https://github.com/your-repo"
                 title={`ChessAI`}

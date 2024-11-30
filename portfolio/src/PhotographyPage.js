@@ -8,7 +8,7 @@ function PhotographyPage() {
 
   return (
     
-    <div className="relative w-screen h-screen">
+    <div className="relative w-screen h-screen bg-primaryColor">
 
       <Gallery />
     </div>

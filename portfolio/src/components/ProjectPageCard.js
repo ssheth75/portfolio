@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FiGithub } from "react-icons/fi";
-import { IoCode } from "react-icons/io5";
 
-const ProjectsPageCard = ({ title, text, image, technologies, gitHub }) => {
+const ProjectsPageCard = ({
+  title,
+  text,
+  images,
+  technologies,
+  gitHub,
+  width,
+}) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (images && images.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 1000); // Change image every 1 second
+
+      return () => clearInterval(interval); // Cleanup on unmount
+    }
+  }, [images]);
+
   return (
     <motion.div
-      className="flex flex-col items-center w-full max-w-5xl border-black border rounded-lg bg-lack shadow-2xl p-8 mt-20"
+      className="flex flex-col items-center border w-full max-w-5xl border-black bg-primaryColor shadow-2xl p-8 mt-20"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <div className="flexflex-col">
+      <div className="flex flex-col">
         <h1 className="font-ariataBold text-4xl w-full text-center">{title}</h1>
-        <h1 className="font-ariata text-l w-full text-center mt-2">{technologies}</h1>
+        <h1 className="font-ariata text-l w-full text-center mt-2">
+          {technologies}
+        </h1>
       </div>
 
       <div className="flex flex-col items-center w-full">
@@ -26,12 +45,22 @@ const ProjectsPageCard = ({ title, text, image, technologies, gitHub }) => {
         </div>
 
         {/* Image Section */}
-        <div className="flex items-center justify-center w-full ">
-          <img
-            src={image}
-            className="w-3/4 h-auto border-2 border-black"
-            alt="About Me"
-          />
+        <div className="flex items-center justify-center w-full">
+          {images && images.length > 0 && (
+            <img
+              src={images[currentImageIndex]}
+              className={`h-auto ${
+                width === "1/2"
+                  ? "w-1/2"
+                  : width === "3/4"
+                  ? "w-3/4"
+                  : width === "1/3"
+                  ? "w-1/3"
+                  : "w-full"
+              }`}
+              alt={`Project ${currentImageIndex + 1}`}
+            />
+          )}
         </div>
       </div>
     </motion.div>
