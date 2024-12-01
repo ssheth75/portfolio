@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import ProjectsPageCard from "./components/ProjectPageCard";
 import React, { useState } from "react";
 import { FaSpotify } from "react-icons/fa";
+import ProtectedComponent from "./components/ProtectedComponent";
 
 function ProjectsPage() {
   const navigate = useNavigate();
@@ -118,16 +119,7 @@ function ProjectsPage() {
       {/* Professional Section */}
       {activeSection === "professional" && (
         <div>
-          <ProjectsPageCard
-            title="Intel Resource Constraint Prediction Model"
-            text="A web-based adaptation of the popular 2048 mobile game, designed to 
-            enhance the classic gameplay experience. This version allows users to 
-            customize their grid size, choosing from a variety of dimensions to increase 
-            difficulty and add variety. "
-            images={["/2048.png"]}
-            technologies="Python, PyTorch, Logistic Regression"
-            width="3/4"
-          />
+          <ProtectedComponent />
         </div>
       )}
     </div>
