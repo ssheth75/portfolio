@@ -14,7 +14,7 @@ function ProtectedComponent() {
   const handlePasswordSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://portfolio-backend-q8bte8y1t-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
+        "https://portfolio-backend-pe87uidhy-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
         { password }
       );
       setProjectData(response.data.content);
@@ -148,58 +148,36 @@ function ProtectedComponent() {
           <h2>{projectData.implementations[0]}</h2>
           <h2 className="py-4">{projectData.implementations[1]}</h2>
           <h2 className="py-4">{projectData.implementations[2]}</h2>
-          <h2 className="py-4">{projectData.implementations[3]}</h2>
           <h2 className="font-ariata text-xl">{projectData.sections[5]}</h2>
           <hr className="border-white my-2" />
-          <h2>
-            It's essential for the popup to remain unobtrusive and avoid being
-            perceived as nagware. Implementing features like cooldown periods
-            and interval-based triggers ensures the popup minimizes screen space
-            usage while maintaining user-friendly behavior.
-          </h2>
-          <h2 className="py-4">
-            Below is the popup shown to Intel PC users when they trigger an
-            event of interest (Microsoft Teams Meeting as an example).
-          </h2>
+          <h2>{projectData.popup[0]}</h2>
+          <h2 className="py-4">{projectData.popup[1]}</h2>
           <div className="w-full justify-center flex py-8">
             <img src="intelpopup.png" className="w-2/3"></img>
           </div>
           <h2 className="font-ariata text-xl">{projectData.sections[6]}</h2>
           <hr className="border-white my-2" />
-          <h2 className="text-lg">Leveraging AI for Sentiment Analysis</h2>
-          <h2 className="pb-4">
-            Integrating AI-driven sentiment analysis (e.g. Hugging Face) can
-            provide deeper insights into user feedback. Natural language
-            processing models can categorize written feedback into themes like
-            "ease of use," "performance issues," or "compatibility concerns."
-            These insights can identify systemic issues, such as recurring "slow
-            performance" themes with specific devices on Lunar Lake chipsets,
-            enabling targeted optimizations.
-          </h2>
-          <h2 className="text-lg">Expanding Trigger Categories</h2>
+          <h2 className="text-lg">{projectData.discussion[0]}</h2>
+          <h2 className="pb-4">{projectData.discussion[1]}</h2>
+          <h2 className="text-lg">{projectData.discussion[2]}</h2>
           <ul className="list-disc px-10 py-6">
             <li className="my-2">
-              Power Events: <br></br>Feedback on battery performance or
-              power-saving modes.
+              {projectData.discussion[3]} <br></br>
+              {projectData.discussion[4]}
             </li>
             <li className="my-2">
-              Error States: <br></br>Sentiment following crashes or system
-              errors.
+              {projectData.discussion[5]} <br></br>
+              {projectData.discussion[6]}
             </li>
             <li className="my-2">
-              Resource-Intensive Tasks: <br></br>Performance feedback during
-              high-demand activities like gaming or rendering.
+              {projectData.discussion[7]}
+              <br></br>
+              {projectData.discussion[8]}
+              {projectData.discussion[9]}
             </li>
           </ul>
-          <h2 className="text-lg">Real-Time Dashboard for Developers</h2>
-          <h2>
-            A companion dashboard could provide engineers and product managers
-            with real-time visualizations of user feedback. Using technologies
-            like AWS OpenSearch or Google BigQuery, aggregated data could be
-            displayed through dynamic graphs, heatmaps, and sentiment trends.
-            This dashboard would allow teams to identify high-impact issues
-            immediately and monitor the effectiveness of deployed fixes.
-          </h2>
+          <h2 className="text-lg">{projectData.discussion[10]}</h2>
+          <h2>{projectData.discussion[11]}</h2>
         </div>
       </motion.div>
     );
