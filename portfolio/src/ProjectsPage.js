@@ -10,7 +10,7 @@ function ProjectsPage() {
   const [activeSection, setActiveSection] = useState("personal"); // Default to 'personal'
 
   return (
-    <div className="relative w-screen bg-primaryColor text-white flex flex-col items-center">
+    <div className="relative w-screen min-h-screen bg-primaryColor text-white flex flex-col items-center">
       <h2 className="text-center font-ariata text-xl lg:text-3xl p-16 ">
         Here's some things I've built.
       </h2>

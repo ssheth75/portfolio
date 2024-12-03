@@ -17,7 +17,7 @@ function HomePage() {
     <div className="relative w-screen h-screen">
       <GradientBackground />
       <div className="relative text-white">
-        <main className="h-screen overflow-y-scroll">
+        <main className="h-screen ">
           {/* About Section */}
           <section
             id="about"

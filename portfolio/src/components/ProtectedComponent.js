@@ -11,37 +11,10 @@ function ProtectedComponent() {
   const [errorMessage, setErrorMessage] = useState("");
   const [projectData, setProjectData] = useState(null);
 
-  const data = [
-    {
-      id: 1,
-      chipset: "Lunar Lake",
-      connection: "USB",
-      device: "Mouse",
-      manufacturer: "Logitech",
-      rating: "1",
-    },
-    {
-      id: 2,
-      chipset: "Raptor Lake",
-      connection: "Bluetooth",
-      device: "Headphones",
-      manufacturer: "Apple",
-      rating: "5",
-    },
-    {
-      id: 3,
-      chipset: "Meteor Lake",
-      connection: "Thunderbolt",
-      device: "Monitor",
-      manufacturer: "Dell",
-      rating: "3",
-    },
-  ];
-
   const handlePasswordSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://portfolio-backend-71iqtklg7-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
+        "https://portfolio-backend-q8bte8y1t-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
         { password }
       );
       setProjectData(response.data.content);
@@ -135,7 +108,7 @@ function ProtectedComponent() {
               </tr>
             </thead>
             <tbody>
-              {projectData.map((row) => (
+              {projectData.rows.map((row) => (
                 <tr key={row.ID} className="">
                   <td className="border border-gray-300 px-4 py-2">{row.ID}</td>
                   <td className="border border-gray-300 px-4 py-2">
@@ -157,84 +130,26 @@ function ProtectedComponent() {
               ))}
             </tbody>
           </table>
-          <h2 className="font-ariata text-xl mt-2">Implementation</h2>
+          <h2 className="font-ariata text-xl mt-2">
+            {projectData.sections[3]}
+          </h2>
           <hr className="border-white my-2" />
-          <h2>
-            One effective way to gather user feedback is through triggered popup
-            forms. When a user performs an action of interest, a feedback form
-            will appear in the bottom-right corner of the UI. Since this
-            approach relies on event-driven feedback, implementing multiple
-            event listeners is essential. To handle the simultaneous tracking of
-            various events, the tool must be multithreaded, enabling it to
-            monitor several event types at once. We can define four primary
-            triggers: Wi-Fi, physical hardware, Microsoft Teams, and Bluetooth.
-            A key advantage of this design is its flexibility—specific triggers
-            can be enabled or disabled as needed without disrupting the overall
-            functionality of the program.
+          <h2>{projectData.implementation}</h2>
+          <h2 className="font-ariata text-base mt-6">
+            {projectData.sections[4]}
           </h2>
-          <h2 className="font-ariata text-base mt-6">Win32 Queries</h2>
           <hr className="border-white my-1" />
-          <h2>
-            A Win32 query refers to a request made to the Windows Management
-            Instrumentation (WMI) system to gather information about
-            Windows-based systems. Win32 classes, which are part of WMI, provide
-            access to a vast array of system details, including processes,
-            hardware, software, user accounts, network configurations, and more.
-            This capability greatly simplifies tracking connectivity. By using
-            the query below, we can monitor when a user connects a physical
-            device through one of the PC's physical ports or establishes a
-            wireless connection like internet or Bluetooth.
-          </h2>
+          <h2>{projectData.win}</h2>
           <div className="py-4">
             <SyntaxHighlighter language="csharp" style={oneDark}>
-              ManagementObjectSearcher searcher = new
-              ManagementObjectSearcher("SELECT * FROM Win32_PnPEntity WHERE
-              Status = 'OK'");
+              {projectData.query}
             </SyntaxHighlighter>
           </div>
-          <h2>
-            Using the data returned by this query, we can implement
-            sophisticated string parsing to determine the type of connection
-            that occurred and extract the fields of interest based on that
-            information. Some data points, however, present unique challenges.
-            For instance, the manufacturer of a device is not directly
-            accessible through a Win32 query. While this limitation exists, the
-            device's MAC address is typically available. Leveraging free online
-            APIs, such as those that map MAC addresses to their corresponding
-            manufacturers, allows us to fill this gap effectively.
-          </h2>
-          <h2 className="py-4">
-            Using the data returned by this query, we can implement string
-            parsing to determine the type of connection that occurred and
-            extract the fields of interest based on that information. Some data
-            points, however, present unique challenges. For instance, the
-            manufacturer of a device is not directly accessible through a Win32
-            query. While this limitation exists, the device's MAC address is
-            typically available. Leveraging free online APIs, such as those that
-            map MAC addresses to their corresponding manufacturers, allows us to
-            fill this gap effectively.
-          </h2>
-          <h2 className="py-4">
-            For Bluetooth devices, although Win32 queries provide basic
-            information, their scope is limited and insufficient for more
-            nuanced requirements. To address this, we can integrate specialized
-            tools, such as the powerful Bluetooth library 32feet.NET, available
-            for .NET. This library offers an extensive API for interacting with
-            Bluetooth devices, enabling high-level access to data about
-            connections, device properties, and more. For application-based
-            triggers, such as those involving Microsoft Teams, Microsoft offers
-            the Graph API. This API provides comprehensive event alerts,
-            allowing the triggering of popups of interest rather simple.
-          </h2>
-          <h2 className="py-4">
-            By combining these techniques we create a comprehensive solution
-            capable of retrieving all necessary data. This approach enhances the
-            accuracy and depth of insights and also enables the development of
-            actionable user experience (UX) improvements. Such a multi-faceted
-            strategy ensures the program is equipped to handle diverse
-            scenarios, providing robust functionality and valuable analytics.
-          </h2>
-          <h2 className="font-ariata text-xl">Popup</h2>
+          <h2>{projectData.implementations[0]}</h2>
+          <h2 className="py-4">{projectData.implementations[1]}</h2>
+          <h2 className="py-4">{projectData.implementations[2]}</h2>
+          <h2 className="py-4">{projectData.implementations[3]}</h2>
+          <h2 className="font-ariata text-xl">{projectData.sections[5]}</h2>
           <hr className="border-white my-2" />
           <h2>
             It's essential for the popup to remain unobtrusive and avoid being
@@ -249,7 +164,7 @@ function ProtectedComponent() {
           <div className="w-full justify-center flex py-8">
             <img src="intelpopup.png" className="w-2/3"></img>
           </div>
-          <h2 className="font-ariata text-xl">Discussion</h2>
+          <h2 className="font-ariata text-xl">{projectData.sections[6]}</h2>
           <hr className="border-white my-2" />
           <h2 className="text-lg">Leveraging AI for Sentiment Analysis</h2>
           <h2 className="pb-4">
@@ -291,7 +206,7 @@ function ProtectedComponent() {
   }
 
   return (
-    <div className="flex flex-col items-center mt-8 text-black font-ariata">
+    <div className="flex flex-col items-center mt-8 text-black font-ariata h-full">
       <div className="relative flex items-center">
         <input
           type="password"
