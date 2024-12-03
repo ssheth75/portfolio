@@ -17,11 +17,11 @@ function HomePage() {
     <div className="relative w-screen h-screen">
       <GradientBackground />
       <div className="relative text-white">
-        <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
+        <main className="h-screen overflow-y-scroll">
           {/* About Section */}
           <section
             id="about"
-            className="min-h-screen snap-start pt-10 flex flex-col items-center px-6"
+            className="min-h-screen pt-10 flex flex-col items-center px-6"
           >
             <div className="flex flex-col lg:flex-row text-black text-lg lg:text-3xl py-10 px-6 lg:px-12 mt-20 text-white rounded-lg border-black mx-auto ">
               {/* Text Section */}
@@ -83,9 +83,9 @@ function HomePage() {
           {/* Projects Section */}
           <section
             id="projects"
-            className="min-h-screen snap-start pt-10 flex flex-col items-center px-6"
+            className="min-h-screen pt-10 flex flex-col items-center px-6"
           >
-            <h2 className="text-center text-black font-ariata text-3xl lg:text-8xl pb-10">
+            <h2 className="text-center text-black font-ariata text-5xl lg:text-8xl pb-10">
               Projects
             </h2>
             <div
@@ -134,9 +134,9 @@ function HomePage() {
           {/* Photography Section */}
           <section
             id="photography"
-            className="min-h-screen snap-start pt-10 flex flex-col text-black items-center px-6"
+            className="min-h-screen mt-20 flex flex-col text-black items-center px-6"
           >
-            <h2 className="text-center text-black font-ariata text-3xl lg:text-8xl pb-10">
+            <h2 className="text-center text-black font-ariata text-5xl lg:text-8xl">
               Photography
             </h2>
             <div className="flex flex-col items-center w-full max-w-5xl border-4 border-black rounded-lg shadow-lg p-8 mt-20">

@@ -3,6 +3,7 @@ import ProjectsPageCard from "./components/ProjectPageCard";
 import React, { useState } from "react";
 import { FaSpotify } from "react-icons/fa";
 import ProtectedComponent from "./components/ProtectedComponent";
+import Test from "./components/Test";
 
 function ProjectsPage() {
   const navigate = useNavigate();
@@ -75,7 +76,7 @@ function ProjectsPage() {
             and admin interfaces. The platform enables product listing, management, 
             and secure purchases. I utilized React, Next.js, Tailwind CSS, the Stripe API 
             for payment processing, and MongoDB for data management."
-            images={["/ecommerce0.png", "/ecommerce1.png", "/ecommerce2.png"]}
+            images={["/ecommerce2.png"]}
             technologies="React/Next.js, Tailwind, Stripe API, MongoDB"
             width="3/4"
           />
@@ -98,9 +99,10 @@ function ProjectsPage() {
           <ProjectsPageCard
             title="This Website"
             text="I made this website using React and Tailwind CSS. Animations done with 
-            Framer Motion. Check out the repo if you are intrested."
+            Framer Motion, and professional projects authentication done with Vercel. 
+            Check out the repo if you are intrested."
             images={["/thisWebsite.png"]}
-            technologies="React, Tailwind, Framer Motion"
+            technologies="React, Tailwind, Vercel, Framer Motion"
             width="3/4"
           />
           <ProjectsPageCard
@@ -120,6 +122,11 @@ function ProjectsPage() {
       {activeSection === "professional" && (
         <div>
           <ProtectedComponent />
+          {/* <div className="mb-20">
+            <Test
+              
+            />
+          </div> */}
         </div>
       )}
     </div>

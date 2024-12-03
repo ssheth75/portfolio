@@ -39,7 +39,7 @@ const ProjectsPageCard = ({
       <div className="flex flex-col items-center w-full">
         {/* Text Section */}
         <div className="w-full py-6">
-          <h2 className="text-sm font-consolas text-center font-thin px-16">
+          <h2 className="text-sm font-consolas text-left font-thin px-16">
             {text}
           </h2>
         </div>
