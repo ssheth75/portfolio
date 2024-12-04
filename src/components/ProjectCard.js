@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ githubLink, title, text, image }) => {
+const Card = ({ githubLink, title, text, image, onClick }) => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
@@ -34,7 +34,7 @@ const Card = ({ githubLink, title, text, image }) => {
       className={`opacity-0 transform translate-y-10 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : ""
       } max-w-sm h-80 rounded overflow-hidden shadow-lg border-2 border-black text-black font-consolas transform transition-transform duration-300 hover:scale-105 flex flex-col`}
-      onClick={() => navigate("/ProjectsPage")}
+      onClick={onClick}
     >
       {/* Image */}
       <div className="h-1/2 w-full">

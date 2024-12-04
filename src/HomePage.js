@@ -84,45 +84,60 @@ function HomePage() {
           <h2 className="text-center text-black font-ariata text-5xl lg:text-8xl pb-10">
             Projects
           </h2>
-          <div
-            className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl"
-            onClick={() => navigate("/projects", { replace: true })}
-          >
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl">
             <ProjectCard
               githubLink="https://github.com/your-repo"
               title={`ChessAI`}
               text="This is a description of my cool project. It does amazing things!"
               image={getPublicImagePath("chess.jpg")}
+              onClick={() =>
+                navigate("/projects", { state: { section: "personal" } })
+              }
             />
             <ProjectCard
               githubLink="https://github.com/your-repo"
               title={`BeTuned`}
               text="This is a description of my cool project. It does amazing things!"
               image={getPublicImagePath("spotify.png")}
+              onClick={() =>
+                navigate("/projects", { state: { section: "personal" } })
+              }
             />
             <ProjectCard
               githubLink="https://github.com/your-repo"
               title={`E-commerce`}
               text="This is a description of my cool project. It does amazing things!"
               image={getPublicImagePath("ecommerce.png")}
+              onClick={() =>
+                navigate("/projects", { state: { section: "personal" } })
+              }
             />
             <ProjectCard
               githubLink="https://github.com/your-repo"
               title={`AstroPOD`}
               text="This is a description of my cool project. It does amazing things!"
               image={getPublicImagePath("astropod.jpg")}
+              onClick={() =>
+                navigate("/projects", { state: { section: "personal" } })
+              }
             />
             <ProjectCard
               githubLink="https://github.com/your-repo"
               title={`2048X`}
               text="This is a description of my cool project. It does amazing things!"
               image={getPublicImagePath("2048.png")}
+              onClick={() =>
+                navigate("/projects", { state: { section: "personal" } })
+              }
             />
             <ProjectCard
               githubLink="https://github.com/your-repo"
               title={`Professional Projects`}
               text="This is a description of my cool project. It does amazing things!"
               image={getPublicImagePath("professional.png")}
+              onClick={() =>
+                navigate("/projects", { state: { section: "professional" } })
+              }
             />
           </div>
         </section>

@@ -1,14 +1,20 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import ProjectsPageCard from "./components/ProjectPageCard";
-import React, { useState } from "react";
-import { FaSpotify } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 import ProtectedComponent from "./components/ProtectedComponent";
-import Test from "./components/Test";
-import { getPublicImagePath } from "./getImage";
+import { getPublicImagePath } from "./getImage";;
 
 function ProjectsPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState("personal"); // Default to 'personal'
+
+  useEffect(() => {
+    // Check if there's state passed from navigation and set the section
+    if (location.state?.section) {
+      setActiveSection(location.state.section);
+    }
+  }, [location.state]);
 
   return (
     <div className="relative w-screen min-h-screen bg-primaryColor text-white flex flex-col items-center">
