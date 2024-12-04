@@ -1,16 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Gallery from "./components/Gallery";
-import Navbar from "./components/Navbar";
 
 function PhotographyPage() {
   const navigate = useNavigate();
 
   return (
-    
-    <div className="relative w-screen h-screen bg-primaryColor">
-
-      <Gallery />
+    <div className="relative w-screen min-h-screen bg-primaryColor">
+      {/* Add padding to ensure no overlap with the sticky Navbar */}
+      <main className="pt-16">
+        <Gallery />
+      </main>
     </div>
   );
 }

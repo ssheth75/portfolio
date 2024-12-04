@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { getPublicImagePath } from "../getImage";
 
 const Navbar = ({ dark }) => {
   const location = useLocation();
@@ -8,7 +9,7 @@ const Navbar = ({ dark }) => {
 
   // Update active section using Intersection Observer
   useEffect(() => {
-    if (location.pathname !== "/home" && location.pathname !== "/") return;
+    if (location.pathname !== "/" && location.pathname !== "/home") return;
 
     const sections = document.querySelectorAll("section[id]");
     const observerOptions = {
@@ -25,10 +26,7 @@ const Navbar = ({ dark }) => {
       });
     };
 
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect(); // Cleanup observer
@@ -60,21 +58,28 @@ const Navbar = ({ dark }) => {
   ];
 
   return (
-    <nav className={`font-consolas text-white text-sm py-2 sticky top-0 z-50 ${navBackground}`}>
+    <nav
+      className={`font-consolas text-white text-sm py-2 sticky top-0 z-50 transition-colors duration-300 ${navBackground}`}
+    >
       <div className="flex justify-end space-x-4 px-6">
         {navItems.map(({ label, path }) => (
           <button
             key={path}
             onClick={() => handleNavigate(path)}
             className={`p-5 text-center py-2 hover:scale-110 transform transition duration-200 ${
-              (path === "home" && (location.pathname === "/" || location.pathname === "/home")) ||
+              (path === "home" &&
+                (location.pathname === "/" || location.pathname === "/home")) ||
               location.pathname === `/${path}`
                 ? "font-bold"
                 : "opacity-50"
             }`}
           >
             {path === "resume" ? (
-              <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a
+                href={getPublicImagePath("resume.pdf")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {label}
               </a>
             ) : (

@@ -77,7 +77,7 @@ function ProjectsPage() {
             and admin interfaces. The platform enables product listing, management, 
             and secure purchases. I utilized React, Next.js, Tailwind CSS, the Stripe API 
             for payment processing, and MongoDB for data management."
-            images={[getPublicImagePath("/ecommerce2.png")]}
+            images={[getPublicImagePath("ecommerce2.png")]}
             technologies="React/Next.js, Tailwind, Stripe API, MongoDB"
             width="3/4"
           />
@@ -89,10 +89,10 @@ function ProjectsPage() {
             formats the captions to include all necessary details, and posts directly to 
             Instagram through Instabot (@astro_p0d)."
             images={[
-              getPublicImagePath("/astropod0.PNG"),
-              getPublicImagePath("/astropod1.PNG"),
-              getPublicImagePath("/astropod2.PNG"),
-              getPublicImagePath("/astropod3.PNG"),
+              getPublicImagePath("astropod0.PNG"),
+              getPublicImagePath("astropod1.PNG"),
+              getPublicImagePath("astropod2.PNG"),
+              getPublicImagePath("astropod3.PNG"),
             ]}
             technologies="Python, BS4, Web-scraping, Cron"
             width="1/3"
@@ -102,7 +102,7 @@ function ProjectsPage() {
             text="I made this website using React and Tailwind CSS. Animations done with 
             Framer Motion, and professional projects authentication done with Vercel. 
             Check out the repo if you are intrested."
-            images={[getPublicImagePath("/thisWebsite.png")]}
+            images={[getPublicImagePath("thisWebsite.png")]}
             technologies="React, Tailwind, Vercel, Framer Motion"
             width="3/4"
           />
@@ -112,7 +112,7 @@ function ProjectsPage() {
             enhance the classic gameplay experience. This version allows users to 
             customize their grid size, choosing from a variety of dimensions to increase 
             difficulty and add variety. "
-            images={[getPublicImagePath("/2048.png")]}
+            images={[getPublicImagePath("2048.png")]}
             technologies="Javascript, HTML/CSS"
             width="3/4"
           />
