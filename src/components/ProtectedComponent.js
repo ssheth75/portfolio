@@ -5,6 +5,7 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { getPublicImagePath } from "../getImage";
 
 function ProtectedComponent() {
   const [password, setPassword] = useState("");
@@ -14,7 +15,7 @@ function ProtectedComponent() {
   const handlePasswordSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://portfolio-backend-girpqzf0q-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
+        "https://portfolio-backend-oohln9xlq-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
         { password }
       );
       setProjectData(response.data.content);
@@ -47,7 +48,7 @@ function ProtectedComponent() {
             <h1 className="font-ariata text-l w-full mt-2">
               {projectData.technologies}
             </h1>{" "}
-            <img className="w-11 pt-2" src="intel.png" />
+            <img className="w-11 pt-2" src={getPublicImagePath("intel.png")} />
           </div>
 
           <div className="flex flex-col w-full text-left font-consolas text-sm pt-8">
@@ -156,7 +157,7 @@ function ProtectedComponent() {
             <h2>{projectData.popup[0]}</h2>
             <h2 className="py-4">{projectData.popup[1]}</h2>
             <div className="w-full justify-center flex py-8">
-              <img src="intelpopup.png" className="w-2/3"></img>
+              <img src={getPublicImagePath("intelpopup.png")} className="w-2/3"></img>
             </div>
             <h2 className="font-ariata text-xl">{projectData.sections[6]}</h2>
             <hr className="border-white my-2" />
