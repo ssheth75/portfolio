@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import ProjectsPageCard from "./components/ProjectPageCard";
 import React, { useState, useEffect } from "react";
 import ProtectedComponent from "./components/ProtectedComponent";
-import { getPublicImagePath } from "./getImage";;
+import { getPublicImagePath } from "./getImage";
 
 function ProjectsPage() {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ function ProjectsPage() {
   }, [location.state]);
 
   return (
-    <div className="relative w-screen min-h-screen bg-primaryColor text-white flex flex-col items-center">
+    <div className="relative w-full min-h-screen bg-primaryColor text-white flex flex-col items-center">
       <h2 className="text-center font-ariata text-xl lg:text-3xl p-16 ">
         Here's some things I've built.
       </h2>
@@ -50,7 +50,7 @@ function ProjectsPage() {
         <div className="mb-20">
           <ProjectsPageCard
             title="ChessAI"
-            text="I developed a chess engine from scratch in C++, incorporating 
+            text="I developed a chess engine in C++, incorporating 
             all core game functionalities and rules. I also implemented a Chess AI adversary powered by a traditional minimax 
             algorithm with alpha-beta pruning, allowing it to play competitively against human players. 
             Check out the repository if you are interested."
@@ -64,6 +64,7 @@ function ProjectsPage() {
               getPublicImagePath("chess6.png"),
             ]}
             technologies="C++, Mini-Max, Alpha-Beta Pruning, SFML"
+            gitHub="https://github.com/ssheth75/ChessAI"
             width="1/2"
           />
           <ProjectsPageCard
@@ -75,6 +76,7 @@ function ProjectsPage() {
             commenting, and discovering shared musical interests."
             images={[getPublicImagePath("beTuned.png")]}
             technologies="React Native, Tailwind, Spotify API, Node.js, MongoDB"
+            gitHub="https://github.com/ssheth75/beTuned"
             width="1/3"
           />{" "}
           <ProjectsPageCard
@@ -85,11 +87,12 @@ function ProjectsPage() {
             for payment processing, and MongoDB for data management."
             images={[getPublicImagePath("ecommerce2.png")]}
             technologies="React/Next.js, Tailwind, Stripe API, MongoDB"
+            gitHub="https://github.com/ssheth75/e-commerce"
             width="3/4"
           />
           <ProjectsPageCard
             title="Astro POD"
-            text="I built a Python script to automate the entire process of sharing NASA's 
+            text="I built a Python script to automate the process of sharing NASA's 
             Astronomy Picture of the Day on Instagram. The script uses BeautifulSoup for 
             web scraping to fetch the daily image along with its metadata and credits, 
             formats the captions to include all necessary details, and posts directly to 
@@ -101,15 +104,16 @@ function ProjectsPage() {
               getPublicImagePath("astropod3.PNG"),
             ]}
             technologies="Python, BS4, Web-scraping, Cron"
+            gitHub="https://github.com/ssheth75/Astro-POD"
             width="1/3"
           />
           <ProjectsPageCard
             title="This Website"
             text="I made this website using React and Tailwind CSS. Animations done with 
-            Framer Motion, and professional projects authentication done with Vercel. 
-            Check out the repo if you are intrested."
+            Framer Motion, and professional projects authentication done with Vercel."
             images={[getPublicImagePath("thisWebsite.png")]}
             technologies="React, Tailwind, Vercel, Framer Motion"
+            gitHub="https://github.com/ssheth75/portfolio"
             width="3/4"
           />
           <ProjectsPageCard
@@ -120,6 +124,7 @@ function ProjectsPage() {
             difficulty and add variety. "
             images={[getPublicImagePath("2048.png")]}
             technologies="Javascript, HTML/CSS"
+            gitHub="https://github.com/ssheth75/2048X"
             width="3/4"
           />
         </div>

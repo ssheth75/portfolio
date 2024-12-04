@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FiGithub } from "react-icons/fi";
 
 const ProjectsPageCard = ({
   title,
@@ -29,11 +30,22 @@ const ProjectsPageCard = ({
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col items-center">
         <h1 className="font-ariataBold text-4xl w-full text-center">{title}</h1>
         <h1 className="font-ariata text-l w-full text-center mt-2">
           {technologies}
         </h1>
+        <a
+          href={gitHub} // Link to GitHub URL
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4"
+        >
+          <FiGithub
+            className="text-2xl hover:scale-110 transition-transform duration-300"
+            title="View on GitHub"
+          />
+        </a>
       </div>
 
       <div className="flex flex-col items-center w-full">

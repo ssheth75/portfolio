@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ githubLink, title, text, image, onClick }) => {
+const Card = ({ title, text, image, onClick }) => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);

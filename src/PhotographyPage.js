@@ -6,7 +6,7 @@ function PhotographyPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-screen min-h-screen bg-primaryColor">
+    <div className="relative w-full min-h-screen bg-primaryColor">
       {/* Add padding to ensure no overlap with the sticky Navbar */}
       <main className="pt-16">
         <Gallery />

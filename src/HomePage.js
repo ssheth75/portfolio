@@ -12,7 +12,7 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-screen min-h-screen">
+    <div className="relative w-full min-h-screen">
       {/* Gradient Background */}
       <GradientBackground />
 
@@ -21,7 +21,7 @@ function HomePage() {
         {/* About Section */}
         <section
           id="about"
-          className="min-h-screen flex flex-col items-center px-6"
+          className="min-h-screen flex flex-col items-center"
         >
           <div className="flex flex-col lg:flex-row text-black text-lg lg:text-3xl py-10 px-6 lg:px-12 mt-20 text-white rounded-lg border-black mx-auto">
             {/* Text Section */}
@@ -79,61 +79,55 @@ function HomePage() {
         {/* Projects Section */}
         <section
           id="projects"
-          className="min-h-screen pt-10 flex flex-col items-center px-6"
+          className="min-h-screen pt-10 flex flex-col items-center"
         >
           <h2 className="text-center text-black font-ariata text-5xl lg:text-8xl pb-10">
             Projects
           </h2>
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl">
             <ProjectCard
-              githubLink="https://github.com/your-repo"
               title={`ChessAI`}
-              text="This is a description of my cool project. It does amazing things!"
+              text="A fully functional chess engine with an AI adversary."
               image={getPublicImagePath("chess.jpg")}
               onClick={() =>
                 navigate("/projects", { state: { section: "personal" } })
               }
             />
             <ProjectCard
-              githubLink="https://github.com/your-repo"
               title={`BeTuned`}
-              text="This is a description of my cool project. It does amazing things!"
+              text="A social media app inspired by BeReal."
               image={getPublicImagePath("spotify.png")}
               onClick={() =>
                 navigate("/projects", { state: { section: "personal" } })
               }
             />
             <ProjectCard
-              githubLink="https://github.com/your-repo"
               title={`E-commerce`}
-              text="This is a description of my cool project. It does amazing things!"
+              text="A full-stack e-commerce platform."
               image={getPublicImagePath("ecommerce.png")}
               onClick={() =>
                 navigate("/projects", { state: { section: "personal" } })
               }
             />
             <ProjectCard
-              githubLink="https://github.com/your-repo"
               title={`AstroPOD`}
-              text="This is a description of my cool project. It does amazing things!"
+              text="A instagram bot posting astronomy content."
               image={getPublicImagePath("astropod.jpg")}
               onClick={() =>
                 navigate("/projects", { state: { section: "personal" } })
               }
             />
             <ProjectCard
-              githubLink="https://github.com/your-repo"
               title={`2048X`}
-              text="This is a description of my cool project. It does amazing things!"
+              text="A spinoff of the popular 2048 mobile game."
               image={getPublicImagePath("2048.png")}
               onClick={() =>
                 navigate("/projects", { state: { section: "personal" } })
               }
             />
             <ProjectCard
-              githubLink="https://github.com/your-repo"
               title={`Professional Projects`}
-              text="This is a description of my cool project. It does amazing things!"
+              text="Some of the professional projects I have worked on in the past."
               image={getPublicImagePath("professional.png")}
               onClick={() =>
                 navigate("/projects", { state: { section: "professional" } })
@@ -145,7 +139,7 @@ function HomePage() {
         {/* Photography Section */}
         <section
           id="photography"
-          className="min-h-screen mt-20 flex flex-col text-black items-center px-6"
+          className="min-h-screen mt-20 flex flex-col text-black items-center"
         >
           <h2 className="text-center text-black font-ariata text-5xl lg:text-8xl">
             Photography

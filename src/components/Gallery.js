@@ -5,8 +5,35 @@ import Navbar from "./Navbar";
 const importAll = (r) => r.keys().map(r);
 const images = importAll(require.context("../photos", false, /\.(png|jpe?g|svg)$/));
 
-const Gallery = () => {
+// Helper function to create a seeded random generator
+const seedRandom = (seed) => {
+  let m = 0x80000000; // 2^31
+  let a = 1103515245;
+  let c = 12345;
+  let state = seed ? seed % m : Math.floor(Math.random() * m);
+
+  return () => {
+    state = (a * state + c) % m;
+    return state / (m - 1);
+  };
+};
+
+// Function to shuffle array with a seed
+const shuffleWithSeed = (array, seed) => {
+  const random = seedRandom(seed);
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+const Gallery = ({ seed = 999 }) => {
   const [isVisible, setIsVisible] = useState(new Array(images.length).fill(false));
+
+  // Shuffle images with the provided seed
+  const shuffledImages = shuffleWithSeed(images, seed);
 
   const handleIntersection = (entries, observer) => {
     entries.forEach((entry, index) => {
@@ -23,9 +50,9 @@ const Gallery = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
-      root: null,  // Observe relative to the viewport
-      rootMargin: "0px 0px 50px 0px",  // Trigger when image is within 50px from bottom of the viewport
-      threshold: 0.1,  // Trigger when 10% of the image is visible
+      root: null, // Observe relative to the viewport
+      rootMargin: "0px 0px 50px 0px", // Trigger when image is within 50px from bottom of the viewport
+      threshold: 0.1, // Trigger when 10% of the image is visible
     });
 
     const imagesElements = document.querySelectorAll(".falling-image");
@@ -39,19 +66,19 @@ const Gallery = () => {
   return (
     <div className="pb-8 px-4 bg-primaryColor">
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-        {images.map((src, index) => (
+        {shuffledImages.map((src, index) => (
           <img
             key={index}
-            src={isVisible[index] ? src : ''}  // Load image only when it's visible
+            src={isVisible[index] ? src : ""} // Load image only when it's visible
             alt={`Image ${index + 1}`}
             className={`falling-image mb-4 w-full rounded-lg shadow-md transition-all duration-1000 transform ${
               isVisible[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
             style={{
-              transitionDelay: `${index * 0.05}s`,  // Staggered delay for animation
-              visibility: isVisible[index] ? "visible" : "hidden",  // Ensure invisible images don't affect layout
+              transitionDelay: `${index * 0.05}s`, // Staggered delay for animation
+              visibility: isVisible[index] ? "visible" : "hidden", // Ensure invisible images don't affect layout
             }}
-            loading="lazy"  // Lazy loading for images
+            loading="lazy" // Lazy loading for images
           />
         ))}
       </div>
