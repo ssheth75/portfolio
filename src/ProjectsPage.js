@@ -67,7 +67,7 @@ function ProjectsPage() {
             day to share their most recently played song, creating a unique and spontaneous way to 
             connect over music. It includes features for interaction with friends and followers, such as liking, 
             commenting, and discovering shared musical interests."
-            images={[getPublicImagePath("/beTuned.png")]}
+            images={[getPublicImagePath("beTuned.png")]}
             technologies="React Native, Tailwind, Spotify API, Node.js, MongoDB"
             width="1/3"
           />{" "}
