@@ -9,6 +9,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FiGithub } from "react-icons/fi";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { CgFileDocument } from "react-icons/cg";
+import { getPublicImagePath } from "./getImage";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -96,37 +97,37 @@ function HomePage() {
                 githubLink="https://github.com/your-repo"
                 title={`ChessAI`}
                 text="This is a description of my cool project. It does amazing things!"
-                image="chess.jpg"
+                image={getPublicImagePath("chess.jpg")}
               />
               <ProjectCard
                 githubLink="https://github.com/your-repo"
                 title={`BeTuned`}
                 text="This is a description of my cool project. It does amazing things!"
-                image="spotify.png"
+                image={getPublicImagePath("spotify.png")}
               />
               <ProjectCard
                 githubLink="https://github.com/your-repo"
                 title={`E-commerce`}
                 text="This is a description of my cool project. It does amazing things!"
-                image="ecommerce.png"
+                image={getPublicImagePath("ecommerce.png")}
               />
               <ProjectCard
                 githubLink="https://github.com/your-repo"
                 title={`AstroPOD`}
                 text="This is a description of my cool project. It does amazing things!"
-                image="astropod.jpg"
+                image={getPublicImagePath("astropod.jpg")}
               />
               <ProjectCard
                 githubLink="https://github.com/your-repo"
                 title={`2048X`}
                 text="This is a description of my cool project. It does amazing things!"
-                image="2048.png"
+                image={getPublicImagePath("2048.png")}
               />
               <ProjectCard
                 githubLink="https://github.com/your-repo"
                 title={`Professional Projects`}
                 text="This is a description of my cool project. It does amazing things!"
-                image="professional.png"
+                image={getPublicImagePath("professional.png")}
               />
             </div>
           </section>
@@ -163,7 +164,7 @@ function HomePage() {
                 {/* Image Section */}
                 <div className="flex items-center justify-center w-full lg:w-1/2 mt-8 lg:mt-0">
                   <img
-                    src="/photography.jpg"
+                    src={getPublicImagePath("photography.jpg")}
                     className="w-3/4 h-auto border-2 border-black"
                     alt="About Me"
                   />

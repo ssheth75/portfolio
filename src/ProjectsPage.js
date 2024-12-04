@@ -4,10 +4,21 @@ import React, { useState } from "react";
 import { FaSpotify } from "react-icons/fa";
 import ProtectedComponent from "./components/ProtectedComponent";
 import Test from "./components/Test";
+import { getPublicImagePath } from "./getImage";
 
 function ProjectsPage() {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("personal"); // Default to 'personal'
+
+  const imagePaths = [
+    "chess0.png",
+    "chess1.png",
+    "chess2.png",
+    "chess3.png",
+    "chess4.png",
+    "chess5.png",
+    "chess6.png",
+  ].map(getPublicImagePath);
 
   return (
     <div className="relative w-screen min-h-screen bg-primaryColor text-white flex flex-col items-center">
@@ -48,13 +59,13 @@ function ProjectsPage() {
             algorithm with alpha-beta pruning, allowing it to play competitively against human players. 
             Check out the repository if you are interested."
             images={[
-              "/chess0.png",
-              "/chess1.png",
-              "/chess2.png",
-              "/chess3.png",
-              "/chess4.png",
-              "/chess5.png",
-              "/chess6.png",
+              getPublicImagePath("chess0.png"),
+              getPublicImagePath("chess1.png"),
+              getPublicImagePath("chess2.png"),
+              getPublicImagePath("chess3.png"),
+              getPublicImagePath("chess4.png"),
+              getPublicImagePath("chess5.png"),
+              getPublicImagePath("chess6.png"),
             ]}
             technologies="C++, Mini-Max, Alpha-Beta Pruning, SFML"
             width="1/2"
@@ -66,7 +77,7 @@ function ProjectsPage() {
             day to share their most recently played song, creating a unique and spontaneous way to 
             connect over music. It includes features for interaction with friends and followers, such as liking, 
             commenting, and discovering shared musical interests."
-            images={["/beTuned.png"]}
+            images={[getPublicImagePath("/beTuned.png")]}
             technologies="React Native, Tailwind, Spotify API, Node.js, MongoDB"
             width="1/3"
           />{" "}
@@ -76,7 +87,7 @@ function ProjectsPage() {
             and admin interfaces. The platform enables product listing, management, 
             and secure purchases. I utilized React, Next.js, Tailwind CSS, the Stripe API 
             for payment processing, and MongoDB for data management."
-            images={["/ecommerce2.png"]}
+            images={[getPublicImagePath("/ecommerce2.png")]}
             technologies="React/Next.js, Tailwind, Stripe API, MongoDB"
             width="3/4"
           />
@@ -88,10 +99,10 @@ function ProjectsPage() {
             formats the captions to include all necessary details, and posts directly to 
             Instagram through Instabot (@astro_p0d)."
             images={[
-              "/astropod0.png",
-              "/astropod1.png",
-              "/astropod2.png",
-              "/astropod3.png",
+              getPublicImagePath("/astropod0.png"),
+              getPublicImagePath("/astropod1.png"),
+              getPublicImagePath("/astropod2.png"),
+              getPublicImagePath("/astropod3.png"),
             ]}
             technologies="Python, BS4, Web-scraping, Cron"
             width="1/3"
@@ -101,7 +112,7 @@ function ProjectsPage() {
             text="I made this website using React and Tailwind CSS. Animations done with 
             Framer Motion, and professional projects authentication done with Vercel. 
             Check out the repo if you are intrested."
-            images={["/thisWebsite.png"]}
+            images={[getPublicImagePath("/thisWebsite.png")]}
             technologies="React, Tailwind, Vercel, Framer Motion"
             width="3/4"
           />
@@ -111,7 +122,7 @@ function ProjectsPage() {
             enhance the classic gameplay experience. This version allows users to 
             customize their grid size, choosing from a variety of dimensions to increase 
             difficulty and add variety. "
-            images={["/2048.png"]}
+            images={[getPublicImagePath("/2048.png")]}
             technologies="Javascript, HTML/CSS"
             width="3/4"
           />

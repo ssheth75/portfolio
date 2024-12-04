@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
 import PhotographyPage from "./PhotographyPage";
 import Navbar from "./components/Navbar";
 import ProjectsPage from "./ProjectsPage";
+
 
 function App() {
   return (
