@@ -14,7 +14,7 @@ function ProtectedComponent() {
   const handlePasswordSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://portfolio-backend-dwzki7o5i-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
+        "https://portfolio-backend-girpqzf0q-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
         { password }
       );
       setProjectData(response.data.content);
