@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import HomePage from "./HomePage";
-import PhotographyPage from "./PhotographyPage";
+import HomePage from "./pages/HomePage";
+import PhotographyPage from "./pages/PhotographyPage";
 import Navbar from "./components/Navbar";
-import ProjectsPage from "./ProjectsPage";
+import ProjectsPage from "./pages/ProjectsPage";
 
-// Helper function to preload images
+
 const preloadImages = (imagePaths) => {
   imagePaths.forEach((path) => {
     const img = new Image();

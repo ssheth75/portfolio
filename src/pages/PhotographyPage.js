@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Gallery from "./components/Gallery";
+import Gallery from "../components/Gallery";
 
 function PhotographyPage() {
   const navigate = useNavigate();

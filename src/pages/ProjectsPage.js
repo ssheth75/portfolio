@@ -1,8 +1,8 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import ProjectsPageCard from "./components/ProjectPageCard";
+import ProjectsPageCard from "../components/ProjectPageCard";
 import React, { useState, useEffect } from "react";
-import ProtectedComponent from "./components/ProtectedComponent";
-import { getPublicImagePath } from "./getImage";
+import ProtectedComponent from "../components/ProtectedComponent";
+import { getPublicImagePath } from "../getImage";
 
 function ProjectsPage() {
   const navigate = useNavigate();

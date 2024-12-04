@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 
-// Dynamically load all images from the photos directory
+
 const importAll = (r) => r.keys().map(r);
 const images = importAll(require.context("../photos", false, /\.(png|jpe?g|svg)$/));
 
-// Helper function to create a seeded random generator
+
 const seedRandom = (seed) => {
   let m = 0x80000000; // 2^31
   let a = 1103515245;
@@ -18,7 +18,7 @@ const seedRandom = (seed) => {
   };
 };
 
-// Function to shuffle array with a seed
+
 const shuffleWithSeed = (array, seed) => {
   const random = seedRandom(seed);
   const shuffled = [...array];
@@ -32,7 +32,7 @@ const shuffleWithSeed = (array, seed) => {
 const Gallery = ({ seed = 999 }) => {
   const [isVisible, setIsVisible] = useState(new Array(images.length).fill(false));
 
-  // Shuffle images with the provided seed
+
   const shuffledImages = shuffleWithSeed(images, seed);
 
   const handleIntersection = (entries, observer) => {
@@ -40,17 +40,17 @@ const Gallery = ({ seed = 999 }) => {
       if (entry.isIntersecting) {
         setIsVisible((prevState) => {
           const newState = [...prevState];
-          newState[index] = true; // Mark the image as visible
+          newState[index] = true; 
           return newState;
         });
-        observer.unobserve(entry.target); // Stop observing once it's visible
+        observer.unobserve(entry.target); 
       }
     });
   };
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
-      root: null, // Observe relative to the viewport
+      root: null,
       rootMargin: "0px 0px 50px 0px", // Trigger when image is within 50px from bottom of the viewport
       threshold: 0.1, // Trigger when 10% of the image is visible
     });
@@ -75,8 +75,8 @@ const Gallery = ({ seed = 999 }) => {
               isVisible[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
             style={{
-              transitionDelay: `${index * 0.05}s`, // Staggered delay for animation
-              visibility: isVisible[index] ? "visible" : "hidden", // Ensure invisible images don't affect layout
+              transitionDelay: `${index * 0.05}s`, 
+              visibility: isVisible[index] ? "visible" : "hidden", 
             }}
             loading="lazy" // Lazy loading for images
           />

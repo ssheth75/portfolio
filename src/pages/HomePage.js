@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import GradientBackground from "./components/FlowField";
-import ProjectCard from "./components/ProjectCard";
+import GradientBackground from "../components/FlowField";
+import ProjectCard from "../components/ProjectCard";
 import { PiLinkedinLogo } from "react-icons/pi";
 import { AiOutlineMail } from "react-icons/ai";
 import { FiGithub } from "react-icons/fi";
 import { CgFileDocument } from "react-icons/cg";
-import { getPublicImagePath } from "./getImage";
+import { getPublicImagePath } from "../getImage";
 
 function HomePage() {
   const navigate = useNavigate();

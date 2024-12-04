@@ -16,7 +16,7 @@ const ProjectsPageCard = ({
     if (images && images.length > 0) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 1000); // Change image every 1 second
+      }, 1000); 
 
       return () => clearInterval(interval); // Cleanup on unmount
     }
@@ -36,7 +36,7 @@ const ProjectsPageCard = ({
           {technologies}
         </h1>
         <a
-          href={gitHub} // Link to GitHub URL
+          href={gitHub} 
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4"

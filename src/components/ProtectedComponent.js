@@ -15,7 +15,7 @@ function ProtectedComponent() {
   const handlePasswordSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://portfolio-backend-oohln9xlq-shirvil-sheths-projects.vercel.app/api/verify-password", // Replace with your Vercel API URL
+        "https://portfolio-backend-oohln9xlq-shirvil-sheths-projects.vercel.app/api/verify-password", 
         { password }
       );
       setProjectData(response.data.content);
@@ -196,7 +196,7 @@ function ProtectedComponent() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           onKeyPress={handleKeyPress} // Submit on Enter key
-          className="w-full p-2 border rounded pl-4 pr-10" // Space for the icon button
+          className="w-full p-2 border rounded pl-4 pr-10" 
         />
         <button
           onClick={handlePasswordSubmit}
