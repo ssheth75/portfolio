@@ -10,16 +10,6 @@ function ProjectsPage() {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("personal"); // Default to 'personal'
 
-  const imagePaths = [
-    "chess0.png",
-    "chess1.png",
-    "chess2.png",
-    "chess3.png",
-    "chess4.png",
-    "chess5.png",
-    "chess6.png",
-  ].map(getPublicImagePath);
-
   return (
     <div className="relative w-screen min-h-screen bg-primaryColor text-white flex flex-col items-center">
       <h2 className="text-center font-ariata text-xl lg:text-3xl p-16 ">
@@ -99,10 +89,10 @@ function ProjectsPage() {
             formats the captions to include all necessary details, and posts directly to 
             Instagram through Instabot (@astro_p0d)."
             images={[
-              getPublicImagePath("/astropod0.png"),
-              getPublicImagePath("/astropod1.png"),
-              getPublicImagePath("/astropod2.png"),
-              getPublicImagePath("/astropod3.png"),
+              getPublicImagePath("/astropod0.PNG"),
+              getPublicImagePath("/astropod1.PNG"),
+              getPublicImagePath("/astropod2.PNG"),
+              getPublicImagePath("/astropod3.PNG"),
             ]}
             technologies="Python, BS4, Web-scraping, Cron"
             width="1/3"
