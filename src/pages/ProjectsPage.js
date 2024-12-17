@@ -17,7 +17,7 @@ function ProjectsPage() {
   }, [location.state]);
 
   return (
-    <div className="relative w-full min-h-screen bg-primaryColor text-white flex flex-col items-center">
+    <div className="relative w-full min-h-screen bg-primaryColor text-white flex flex-col items-center pt-[50px]">
       <h2 className="text-center font-ariata text-xl lg:text-3xl p-16 ">
         Here's some things I've built.
       </h2>
@@ -109,8 +109,7 @@ function ProjectsPage() {
           />
           <ProjectsPageCard
             title="This Website"
-            text="I made this website using React and Tailwind CSS. Animations done with 
-            Framer Motion, and professional projects authentication done with Vercel."
+            text="I made this website using React and Tailwind CSS. Professional projects authentication done with Vercel."
             images={[getPublicImagePath("thisWebsite.png")]}
             technologies="React, Tailwind, Vercel, Framer Motion"
             gitHub="https://github.com/ssheth75/portfolio"

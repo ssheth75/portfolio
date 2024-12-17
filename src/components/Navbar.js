@@ -26,7 +26,10 @@ const Navbar = ({ dark }) => {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect(); // Cleanup observer
@@ -46,7 +49,7 @@ const Navbar = ({ dark }) => {
   // Conditionally apply the background class based on the current route
   const navBackground =
     location.pathname === "/" || location.pathname === "/home"
-      ? "bg-transparent"
+      ? "bg-primaryColor"
       : "bg-primaryColor";
 
   // Define navigation items
@@ -59,7 +62,7 @@ const Navbar = ({ dark }) => {
 
   return (
     <nav
-      className={`font-consolas text-white text-sm py-2 sticky top-0 z-50 transition-colors duration-300 ${navBackground}`}
+      className={`font-consolas text-white text-sm py-2 absolute top-0 left-0 w-full h-[60px] z-50 transition-colors duration-300 ${navBackground}`}
     >
       <div className="flex justify-end space-x-4 px-6">
         {navItems.map(({ label, path }) => (

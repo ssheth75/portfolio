@@ -29,7 +29,7 @@ const shuffleWithSeed = (array, seed) => {
   return shuffled;
 };
 
-const Gallery = ({ seed = 999 }) => {
+const Gallery = ({ seed = 11231111111121 }) => {
   const [isVisible, setIsVisible] = useState(new Array(images.length).fill(false));
 
 
@@ -64,7 +64,7 @@ const Gallery = ({ seed = 999 }) => {
   }, []);
 
   return (
-    <div className="pb-8 px-4 bg-primaryColor">
+    <div className=" bg-">
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
         {shuffledImages.map((src, index) => (
           <img
