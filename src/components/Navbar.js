@@ -36,15 +36,11 @@ const Navbar = ({ dark }) => {
   }, [location.pathname]);
 
   // Handle navigation when a user clicks on the nav bar links
-  const handleNavigate = (path) => {
-    if (path === "resume") {
-      // Open the resume PDF in a new tab
-      window.open("resume.pdf", "_blank");
-    } else {
-      // Navigate to the respective page
-      navigate(path === "home" ? "/" : `/${path}`);
-    }
-  };
+const handleNavigate = (path) => {
+  if (path !== "resume") {
+    navigate(path === "home" ? "/" : `/${path}`);
+  }
+};
 
   // Conditionally apply the background class based on the current route
   const navBackground =
