@@ -1,18 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.b3bb868d.css",
-    "main.js": "/static/js/main.3e346479.js",
+    "main.css": "/static/css/main.5e9725ad.css",
+    "main.js": "/static/js/main.450c5797.js",
     "static/js/453.ace21015.chunk.js": "/static/js/453.ace21015.chunk.js",
-    "static/media/japaneseGarden.jpg": "/static/media/japaneseGarden.edf931649f802d16b774.jpg",
     "static/media/waterfall.jpg": "/static/media/waterfall.38ccf51b151df35cbb90.jpg",
-    "static/media/rainier.jpg": "/static/media/rainier.21951964dc7ef4544b4d.jpg",
     "static/media/cascadesRoad.jpg": "/static/media/cascadesRoad.3ceac2417764ea48b197.jpg",
-    "static/media/greece2.jpg": "/static/media/greece2.e6e9e8ed100f09f883fb.jpg",
-    "static/media/otters.jpg": "/static/media/otters.dee5d5dd07e4072209bd.jpg",
     "static/media/cascadesbw.jpg": "/static/media/cascadesbw.7db06ac53ff733a2cb87.jpg",
     "static/media/diablo.jpg": "/static/media/diablo.c48e1f0c547dd3fc6208.jpg",
     "static/media/lawquad.jpg": "/static/media/lawquad.47492e50049c68409bc8.jpg",
-    "static/media/portland.jpg": "/static/media/portland.8f3d60a171824abd22e3.jpg",
     "static/media/nyc.jpg": "/static/media/nyc.39d43631a0a466afcd2e.jpg",
     "static/media/stateTheater.jpg": "/static/media/stateTheater.292c640697a1b2795539.jpg",
     "static/media/madrid7.jpg": "/static/media/madrid7.a3c472f3db04ab895cdf.jpg",
@@ -34,7 +29,6 @@
     "static/media/lasagrad.jpg": "/static/media/lasagrad.ec7e6b257dfaf1bc88bf.jpg",
     "static/media/alps.jpg": "/static/media/alps.b3aa4cfbcfa38fafb09f.jpg",
     "static/media/parrot.jpg": "/static/media/parrot.9f10b7579c53af618c45.jpg",
-    "static/media/nycBday.jpg": "/static/media/nycBday.f946da66292e2cd926ad.jpg",
     "static/media/bagdad.jpg": "/static/media/bagdad.799ede2309410cf73ea8.jpg",
     "static/media/wonderland.jpg": "/static/media/wonderland.e367e9cf9b04b9e69fc3.jpg",
     "static/media/barca1.jpg": "/static/media/barca1.b22d2f1a79f9f00ec4a8.jpg",
@@ -54,12 +48,12 @@
     "static/media/Outfit-Light.ttf": "/static/media/Outfit-Light.27737e30f9f52f95ba31.ttf",
     "static/media/Outfit-Medium.ttf": "/static/media/Outfit-Medium.1d6f1a86e227bec4497d.ttf",
     "index.html": "/index.html",
-    "main.b3bb868d.css.map": "/static/css/main.b3bb868d.css.map",
-    "main.3e346479.js.map": "/static/js/main.3e346479.js.map",
+    "main.5e9725ad.css.map": "/static/css/main.5e9725ad.css.map",
+    "main.450c5797.js.map": "/static/js/main.450c5797.js.map",
     "453.ace21015.chunk.js.map": "/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3bb868d.css",
-    "static/js/main.3e346479.js"
+    "static/css/main.5e9725ad.css",
+    "static/js/main.450c5797.js"
   ]
 }
