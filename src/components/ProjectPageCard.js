@@ -5,22 +5,22 @@ import { FiGithub } from "react-icons/fi";
 const ProjectsPageCard = ({
   title,
   text,
-  images,
+  assets, // Array of objects { type: 'image' | 'video', src: string }
   technologies,
   gitHub,
   width,
 }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentAssetIndex, setCurrentAssetIndex] = useState(0);
 
   useEffect(() => {
-    if (images && images.length > 0) {
+    if (assets && assets.length > 0) {
       const interval = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 1000); 
+        setCurrentAssetIndex((prevIndex) => (prevIndex + 1) % assets.length);
+      }, 2000); // Change asset every second
 
       return () => clearInterval(interval); // Cleanup on unmount
     }
-  }, [images]);
+  }, [assets]);
 
   return (
     <motion.div
@@ -36,7 +36,7 @@ const ProjectsPageCard = ({
           {technologies}
         </h1>
         <a
-          href={gitHub} 
+          href={gitHub}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4"
@@ -56,22 +56,35 @@ const ProjectsPageCard = ({
           </h2>
         </div>
 
-        {/* Image Section */}
+        {/* Media Section */}
         <div className="flex items-center justify-center w-full">
-          {images && images.length > 0 && (
-            <img
-              src={images[currentImageIndex]}
-              className={`h-auto ${
-                width === "1/2"
-                  ? "w-1/2"
-                  : width === "3/4"
-                  ? "w-3/4"
-                  : width === "1/3"
-                  ? "w-1/3"
-                  : "w-full"
-              }`}
-              alt={`Project ${currentImageIndex + 1}`}
-            />
+          {assets && assets.length > 0 && (
+            <>
+              {assets[currentAssetIndex].type === "image" ? (
+                <img
+                  src={assets[currentAssetIndex].src}
+                  className={`h-auto ${
+                    width === "1/2"
+                      ? "w-1/2"
+                      : width === "3/4"
+                      ? "w-3/4"
+                      : width === "1/3"
+                      ? "w-1/3"
+                      : "w-full"
+                  }`}
+                  alt={`Project ${currentAssetIndex + 1}`}
+                />
+              ) : (
+                <video
+                  src={assets[currentAssetIndex].src}
+                  className="w-3/4 h-auto" // Example: 75% width of the container
+                  controls
+                  autoPlay
+                  loop
+                  muted
+                />
+              )}
+            </>
           )}
         </div>
       </div>

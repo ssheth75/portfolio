@@ -54,19 +54,30 @@ function ProjectsPage() {
             all core game functionalities and rules. I also implemented a Chess AI adversary powered by a traditional minimax 
             algorithm with alpha-beta pruning, allowing it to play competitively against human players. 
             Check out the repository if you are interested."
-            images={[
-              getPublicImagePath("chess0.png"),
-              getPublicImagePath("chess1.png"),
-              getPublicImagePath("chess2.png"),
-              getPublicImagePath("chess3.png"),
-              getPublicImagePath("chess4.png"),
-              getPublicImagePath("chess5.png"),
-              getPublicImagePath("chess6.png"),
+            assets={[
+              { type: "image", src: getPublicImagePath("chess0.png") },
+              { type: "image", src: getPublicImagePath("chess1.png") },
+              { type: "image", src: getPublicImagePath("chess2.png") },
+              { type: "image", src: getPublicImagePath("chess3.png") },
+              { type: "image", src: getPublicImagePath("chess4.png") },
+              { type: "image", src: getPublicImagePath("chess5.png") },
+              { type: "image", src: getPublicImagePath("chess6.png") },
             ]}
             technologies="C++, Mini-Max, Alpha-Beta Pruning, SFML"
             gitHub="https://github.com/ssheth75/ChessAI"
             width="1/2"
           />
+          <ProjectsPageCard
+            title="Raycaster"
+            text="An implementation of a basic 2D grid-based game rendered into a 
+            3D perspective using raycasting. Includes per-column 
+            wall projection, distance-based shading, and a dual-view system for a 
+            bird's-eye and first-person perspective. Developed in C++ with SFML."
+            assets={[{ type: "video", src: getPublicImagePath("raycast.mp4") }]}
+            technologies="C++, SFML"
+            gitHub="https://github.com/ssheth75/Raycaster"
+            width="1/3"
+          />{" "}
           <ProjectsPageCard
             title="BeTuned (Developing)"
             text="I am currenly developing a React Native mobile app inspired by the popular social 
@@ -74,7 +85,7 @@ function ProjectsPage() {
             day to share their most recently played song, creating a unique and spontaneous way to 
             connect over music. It includes features for interaction with friends and followers, such as liking, 
             commenting, and discovering shared musical interests."
-            images={[getPublicImagePath("beTuned.png")]}
+            assets={[{ type: "image", src: getPublicImagePath("beTuned.png") }]}
             technologies="React Native, Tailwind, Spotify API, Node.js, MongoDB"
             gitHub="https://github.com/ssheth75/beTuned"
             width="1/3"
@@ -85,7 +96,9 @@ function ProjectsPage() {
             and admin interfaces. The platform enables product listing, management, 
             and secure purchases. I utilized React, Next.js, Tailwind CSS, the Stripe API 
             for payment processing, and MongoDB for data management."
-            images={[getPublicImagePath("ecommerce2.png")]}
+            assets={[
+              { type: "image", src: getPublicImagePath("ecommerce2.png") },
+            ]}
             technologies="React/Next.js, Tailwind, Stripe API, MongoDB"
             gitHub="https://github.com/ssheth75/e-commerce"
             width="3/4"
@@ -97,11 +110,11 @@ function ProjectsPage() {
             web scraping to fetch the daily image along with its metadata and credits, 
             formats the captions to include all necessary details, and posts directly to 
             Instagram through Instabot (@astro_p0d)."
-            images={[
-              getPublicImagePath("astropod0.PNG"),
-              getPublicImagePath("astropod1.PNG"),
-              getPublicImagePath("astropod2.PNG"),
-              getPublicImagePath("astropod3.PNG"),
+            assets={[
+              { type: "image", src: getPublicImagePath("astropod0.PNG") },
+              { type: "image", src: getPublicImagePath("astropod1.PNG") },
+              { type: "image", src: getPublicImagePath("astropod2.PNG") },
+              { type: "image", src: getPublicImagePath("astropod3.PNG") },
             ]}
             technologies="Python, BS4, Web-scraping, Cron"
             gitHub="https://github.com/ssheth75/Astro-POD"
@@ -110,7 +123,9 @@ function ProjectsPage() {
           <ProjectsPageCard
             title="This Website"
             text="I made this website using React and Tailwind CSS. Professional projects authentication done with Vercel."
-            images={[getPublicImagePath("thisWebsite.png")]}
+            assets={[
+              { type: "image", src: getPublicImagePath("thisWebsite.png") },
+            ]}
             technologies="React, Tailwind, Vercel, Framer Motion"
             gitHub="https://github.com/ssheth75/portfolio"
             width="3/4"
@@ -121,7 +136,7 @@ function ProjectsPage() {
             enhance the classic gameplay experience. This version allows users to 
             customize their grid size, choosing from a variety of dimensions to increase 
             difficulty and add variety. "
-            images={[getPublicImagePath("2048.png")]}
+            assets={[{ type: "image", src: getPublicImagePath("2048.png") }]}
             technologies="Javascript, HTML/CSS"
             gitHub="https://github.com/ssheth75/2048X"
             width="3/4"
