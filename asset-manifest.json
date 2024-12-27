@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5e9725ad.css",
-    "main.js": "/static/js/main.56b39e74.js",
+    "main.css": "/static/css/main.dc34ba20.css",
+    "main.js": "/static/js/main.7de79573.js",
     "static/js/453.ace21015.chunk.js": "/static/js/453.ace21015.chunk.js",
     "static/media/waterfall.jpg": "/static/media/waterfall.38ccf51b151df35cbb90.jpg",
     "static/media/cascadesRoad.jpg": "/static/media/cascadesRoad.3ceac2417764ea48b197.jpg",
@@ -48,12 +48,12 @@
     "static/media/Outfit-Light.ttf": "/static/media/Outfit-Light.27737e30f9f52f95ba31.ttf",
     "static/media/Outfit-Medium.ttf": "/static/media/Outfit-Medium.1d6f1a86e227bec4497d.ttf",
     "index.html": "/index.html",
-    "main.5e9725ad.css.map": "/static/css/main.5e9725ad.css.map",
-    "main.56b39e74.js.map": "/static/js/main.56b39e74.js.map",
+    "main.dc34ba20.css.map": "/static/css/main.dc34ba20.css.map",
+    "main.7de79573.js.map": "/static/js/main.7de79573.js.map",
     "453.ace21015.chunk.js.map": "/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e9725ad.css",
-    "static/js/main.56b39e74.js"
+    "static/css/main.dc34ba20.css",
+    "static/js/main.7de79573.js"
   ]
 }
